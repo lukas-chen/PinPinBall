@@ -25,8 +25,8 @@ namespace PinBall
 
         public bool HitBy(IHitter hitter)
         {
-            //if (!this.Visible) return false;
-            
+            if (!this.Visible) return false;
+
             Control c = (Control)hitter;
             Rectangle r1 = new Rectangle(this.Left, this.Top, this.Width, this.Height);
             Rectangle r2 = new Rectangle(c.Left, c.Top, c.Width, c.Height);
@@ -46,7 +46,8 @@ namespace PinBall
                         this.Status = BrickStatus.Falling;
                         break;
                     case BrickStatus.Dead:
-                        hit = false;
+                        this.Visible = false;
+                        //hit = false;
                         break;
                 }
             }
