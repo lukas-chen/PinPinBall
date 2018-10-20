@@ -96,7 +96,7 @@ namespace PinBall
                     }
                     break;
                 case BrickStatus.Dead:
-
+                    this.Visible = false;
                     break;
             }
 

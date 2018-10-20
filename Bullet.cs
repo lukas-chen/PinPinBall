@@ -39,10 +39,28 @@ namespace PinBall
                         this.Status = BulletStatus.Dead;
 
                     }
+                    if (obj != null && obj is Ball)
+                    {
+                        this.Status = BulletStatus.Dead;
+                    }
+                    //if (obj != null && obj is Ball)
+                    //{
 
+                    //    Random rnd = new Random();
+                    //    for (int i = 0; i < 2; i++)
+                    //    {
+                    //        var b = new Ball(rnd.Next(-5,5), rnd.Next(-5,5));
+                    //        b.Left = this.Left;
+                    //        b.Top = this.Top;
+                    //        b.Checked = true;
+                    //        this.Parent.Controls.Add(b);
+                    //    }
+                    //    this.Status = BulletStatus.Dead;
+                    //    this.Visible = false;
+                    //}
                     break;
                 case BulletStatus.Dead:
-                    this.Visible = false;   
+                    this.Visible = false;
                     break;
 
             }
